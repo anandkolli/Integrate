@@ -112,7 +112,7 @@ func createLeadData(rsp http.ResponseWriter, req *http.Request) {
 	}
 
 	if ret := validateLeadData(&payload); ret != nil {
-		log.Println("LeadData-validation-failed",ret)
+		log.Println("LeadData-validation-failed", ret)
 		rsp.WriteHeader(http.StatusBadRequest)
 		return
 	}
@@ -136,7 +136,6 @@ func getLeadData(rsp http.ResponseWriter, req *http.Request) {
 	}
 	sz, _ := strconv.Atoi(size[0])
 	data := Storage.Fetch(sz)
-	log.Println(data)
 	json.NewEncoder(rsp).Encode(data)
 }
 
