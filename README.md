@@ -21,6 +21,8 @@ curl -v -H "Content-Type: application/json" -XPOST http://demo:demo@localhost:90
 
 curl -v -H "Content-Type: application/json" -XGET http://demo:demo@localhost:9090/integrate/v1/leaddata?size=1
   ```
+
+5) Used gofmt, goimports and golint for formatting and static code analysis.
  
 ## How to Run
 - Clone the repository and run below commands
