@@ -20,7 +20,7 @@ type DataStore interface {
 }
 
 // StoreInMem place holder for storing lead data
-type StoreInMem struct {
+type storeInMem struct {
 	inmem []interface{}
 }
 
@@ -28,7 +28,7 @@ type StoreInMem struct {
 func Init(storageType int) DataStore {
 	switch storageType {
 	case INMEMORY:
-		storage := new(StoreInMem)
+		storage := new(storeInMem)
 		return DataStore(storage)
 	default:
 		log.Println("Invalid-storage-type")
@@ -37,13 +37,13 @@ func Init(storageType int) DataStore {
 }
 
 // Add inserts an entry into the data store
-func (ds *StoreInMem) Add(data interface{}) error {
+func (ds *storeInMem) Add(data interface{}) error {
 	ds.inmem = append(ds.inmem, data)
 	return nil
 }
 
 // Fetch retrieves an entry from data store
-func (ds *StoreInMem) Fetch(size int) []interface{} {
+func (ds *storeInMem) Fetch(size int) []interface{} {
 	var idx int
 	var data []interface{}
 	if size == 0 {
