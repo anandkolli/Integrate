@@ -5,9 +5,9 @@ Integrate assesment
 1) Integrate server is running on localhost:9090
 2) One REST endpoint is exposed (/integrate/v1/leaddata) and two operations can be performed on this endpoint
     
-    a) To send the lead data to server
+    a) POST => To send the lead data to server
     
-    b) To get the lead data from the server (I have added size parameter to request the number of lead data entries from server)
+    b) GET => To get the lead data from the server (I have added size parameter to request the number of lead data entries from server)
 
 3) Basic authentication is required to proceed with the above endpoint.
 
@@ -31,32 +31,30 @@ cd rest
 go test -v
 
 === RUN   Test_1
-2019/10/15 23:19:30 Spinning-Integrate-Server
+2019/10/16 11:19:27 Spinning-Integrate-Server
 === RUN   Test_1/Invalid-Credentials
 --- PASS: Test_1 (1.00s)
     --- PASS: Test_1/Invalid-Credentials (0.00s)
 === RUN   Test_2
 === RUN   Test_2/Successful-Create-LeadData
---- PASS: Test_2 (1.01s)
+--- PASS: Test_2 (1.13s)
     --- PASS: Test_2/Successful-Create-LeadData (0.00s)
 === RUN   Test_3
 === RUN   Test_3/Missing-mandatory-attribute
-2019/10/15 23:19:32 LeadData-validation-failed Missing-Mandatory-Attribute
+2019/10/16 11:19:29 LeadData-validation-failed Missing-Mandatory-Attribute
 --- PASS: Test_3 (0.00s)
     --- PASS: Test_3/Missing-mandatory-attribute (0.00s)
 === RUN   Test_4
 === RUN   Test_4/Successful-Get-LeadData
-2019/10/15 23:19:33 [{anand kolli akolli@xyz.com Integrate yes TW74DJ 15-Oct-2019}]
 --- PASS: Test_4 (1.00s)
     --- PASS: Test_4/Successful-Get-LeadData (0.00s)
 === RUN   Test_5
 === RUN   Test_5/Get-When-Size-is-greater-than-storeddata
-2019/10/15 23:19:34 [{anand kolli akolli@xyz.com Integrate yes TW74DJ 15-Oct-2019}]
 --- PASS: Test_5 (1.00s)
     --- PASS: Test_5/Get-When-Size-is-greater-than-storeddata (0.00s)
 === RUN   Test_6
 === RUN   Test_6/Size-is-missing
-2019/10/15 23:19:35 Bad-request-size-missing
+2019/10/16 11:19:32 Bad-request-size-missing
 --- PASS: Test_6 (1.00s)
     --- PASS: Test_6/Size-is-missing (0.00s)
 === RUN   Test_7
@@ -68,8 +66,7 @@ go test -v
 --- PASS: Test_8 (0.00s)
     --- PASS: Test_8/Missing-Username-Password (0.00s)
 PASS
-ok      github.com/anandkolli/Integrate/rest    5.024s
-
+ok      github.com/anandkolli/Integrate/rest    5.150s
 ```
 
 ## Future Scope
