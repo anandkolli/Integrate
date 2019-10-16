@@ -1,3 +1,4 @@
+// Package rest package exposing integration rest endpoint to send and collect from the server
 package rest
 
 import (

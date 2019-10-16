@@ -2,6 +2,8 @@
 --
     import "github.com/anandkolli/Integrate/rest"
 
+Package rest package exposing integration rest endpoint to send and collect from
+the server
 
 ## Usage
 

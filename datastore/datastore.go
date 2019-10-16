@@ -1,3 +1,5 @@
+// Package datastore package is an abstraction for the storing data either to persistent storage
+// or in memory
 package datastore
 
 import (
