@@ -16,11 +16,26 @@ Integrate assesment
     b) Username and password is configured to demo/demo
 
 4) Data is stored inmemory and implementation can be enhanced 
-  ```
-curl -v -H "Content-Type: application/json" -XPOST http://demo:demo@localhost:9090/integrate/v1/leaddata -d '{"firstname":"anand","lastname":"kolli","company":"integrate","postcode":"TW74DJ","email":"akolli@xyz.com","acceptterms":"yess","dat":"15-Oct-2019"}'
+```
+curl -v -H "Content-Type: application/json" -XPOST http://demo:demo@localhost:9090/integrate/v1/leaddata -d @data.json
 
+data.json
+{
+  "data": {
+    "firstname": "anand",
+    "lastname": "kolli",
+    "email": "akolli@xyz.com",
+    "company": "integrate",
+    "acceptterms": "yess",
+    "postcode": "TW74DJ",
+    "date": "16-Oct-2019"
+  }
+}
+
+```
+```
 curl -v -H "Content-Type: application/json" -XGET http://demo:demo@localhost:9090/integrate/v1/leaddata?size=1
-  ```
+```
 
 5) Used gofmt, goimports and golint for formatting and static code analysis.
  
