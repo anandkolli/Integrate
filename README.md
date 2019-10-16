@@ -88,4 +88,4 @@ ok      github.com/anandkolli/Integrate/rest    5.233s
 1) Can add couple of more api's for login and logout along with JWT tokens.
    - Login API is commented out for the sake of simplicity.
 
-2) Can enhance data store package to push the data to persistent storage.
+2) Design of datastore package is extensible and can push event data to persistent storage as well.
