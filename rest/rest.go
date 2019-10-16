@@ -87,8 +87,8 @@ func getCredentials(req *http.Request) []string {
 		return pair
 	}
 
-	payloa, _ := base64.StdEncoding.DecodeString(auth[1])
-	pair = strings.SplitN(string(payloa), ":", 2)
+	payload, _ := base64.StdEncoding.DecodeString(auth[1])
+	pair = strings.SplitN(string(payload), ":", 2)
 	return pair
 }
 
