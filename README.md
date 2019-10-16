@@ -43,34 +43,33 @@ curl -v -H "Content-Type: application/json" -XGET http://demo:demo@localhost:909
 - Clone the repository and run below commands
 ```
 cd rest
-go test -v
-
+go test -v -cover
 === RUN   Test_1
-2019/10/16 11:19:27 Spinning-Integrate-Server
+2019/10/16 13:26:01 Spinning-Integrate-Server
 === RUN   Test_1/Invalid-Credentials
---- PASS: Test_1 (1.00s)
+--- PASS: Test_1 (1.08s)
     --- PASS: Test_1/Invalid-Credentials (0.00s)
 === RUN   Test_2
 === RUN   Test_2/Successful-Create-LeadData
---- PASS: Test_2 (1.13s)
+--- PASS: Test_2 (1.08s)
     --- PASS: Test_2/Successful-Create-LeadData (0.00s)
 === RUN   Test_3
 === RUN   Test_3/Missing-mandatory-attribute
-2019/10/16 11:19:29 LeadData-validation-failed Missing-Mandatory-Attribute
+2019/10/16 13:26:03 LeadData-validation-failed Missing-Mandatory-Attribute
 --- PASS: Test_3 (0.00s)
     --- PASS: Test_3/Missing-mandatory-attribute (0.00s)
 === RUN   Test_4
 === RUN   Test_4/Successful-Get-LeadData
---- PASS: Test_4 (1.00s)
+--- PASS: Test_4 (1.01s)
     --- PASS: Test_4/Successful-Get-LeadData (0.00s)
 === RUN   Test_5
 === RUN   Test_5/Get-When-Size-is-greater-than-storeddata
---- PASS: Test_5 (1.00s)
+--- PASS: Test_5 (1.04s)
     --- PASS: Test_5/Get-When-Size-is-greater-than-storeddata (0.00s)
 === RUN   Test_6
 === RUN   Test_6/Size-is-missing
-2019/10/16 11:19:32 Bad-request-size-missing
---- PASS: Test_6 (1.00s)
+2019/10/16 13:26:06 Bad-request-size-missing
+--- PASS: Test_6 (1.01s)
     --- PASS: Test_6/Size-is-missing (0.00s)
 === RUN   Test_7
 === RUN   Test_7/Invalid-credentials-for-Get-Leaddata
@@ -81,7 +80,8 @@ go test -v
 --- PASS: Test_8 (0.00s)
     --- PASS: Test_8/Missing-Username-Password (0.00s)
 PASS
-ok      github.com/anandkolli/Integrate/rest    5.150s
+coverage: 93.3% of statements
+ok      github.com/anandkolli/Integrate/rest    5.233s
 ```
 
 ## Future Scope
