@@ -18,7 +18,6 @@ const (
 
 ```go
 var (
-
 	// Storage placeholder for the type of storage used to store Leaddata
 	Storage datastore.DataStore
 )
@@ -31,10 +30,10 @@ func StartIntegrateServer()
 ```
 StartIntegrateServer starts the REST Server using the handler that is provided
 
-#### type LeadData
+#### type Attributes
 
 ```go
-type LeadData struct {
+type Attributes struct {
 	FirstName   string `json:"firstname"`
 	LastName    string `json:"lastname"`
 	Email       string `json:"email"`
@@ -45,7 +44,17 @@ type LeadData struct {
 }
 ```
 
-LeadData place holder for data collected from events
+Attributes holds attributes of lead data
+
+#### type LeadData
+
+```go
+type LeadData struct {
+	Data Attributes `json:"data"`
+}
+```
+
+LeadData holds data collected from events
 
 #### type LoginPayload
 

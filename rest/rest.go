@@ -24,13 +24,17 @@ const (
 )
 
 var (
-	isUserLoggedIn = false
 	// Storage placeholder for the type of storage used to store Leaddata
 	Storage datastore.DataStore
 )
 
-// LeadData place holder for data collected from events
+// LeadData holds data collected from events
 type LeadData struct {
+	Data Attributes `json:"data"`
+}
+
+// Attributes holds attributes of lead data
+type Attributes struct {
 	FirstName   string `json:"firstname"`
 	LastName    string `json:"lastname"`
 	Email       string `json:"email"`
@@ -89,7 +93,7 @@ func getCredentials(req *http.Request) []string {
 
 // validateLeadData validates leaddata attributes
 func validateLeadData(data *LeadData) error {
-	if data.FirstName == "" || data.LastName == "" || data.Email == "" || data.AcceptTerms == "" {
+	if data.Data.FirstName == "" || data.Data.LastName == "" || data.Data.Email == "" || data.Data.AcceptTerms == "" {
 		return errors.New("Missing-Mandatory-Attribute")
 	}
 	return nil

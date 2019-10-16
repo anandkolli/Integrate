@@ -106,7 +106,7 @@ func Test_1(t *testing.T) {
 
 	time.Sleep(1 * time.Second)
 	endpoint := "http://dem:demo@localhost:9090" + "/integrate/v1/leaddata"
-	payload := LeadData{"anand", "kolli", "akolli@xyz.com", "Integrate", "yes", "TW74DJ", "15-Oct-2019"}
+	payload := LeadData{Attributes{"anand", "kolli", "akolli@xyz.com", "Integrate", "yes", "TW74DJ", "15-Oct-2019"}}
 	tests := []struct {
 		name string
 		args LeadData
@@ -130,7 +130,7 @@ func Test_1(t *testing.T) {
 func Test_2(t *testing.T) {
 
 	time.Sleep(1 * time.Second)
-	payload := LeadData{"anand", "kolli", "akolli@xyz.com", "Integrate", "yes", "TW74DJ", "15-Oct-2019"}
+	payload := LeadData{Attributes{"anand", "kolli", "akolli@xyz.com", "Integrate", "yes", "TW74DJ", "15-Oct-2019"}}
 	tests := []struct {
 		name string
 		args LeadData
@@ -151,7 +151,7 @@ func Test_2(t *testing.T) {
 // Test_3 missing mandatory attribute
 func Test_3(t *testing.T) {
 
-	payload := LeadData{"", "kolli", "akolli@xyz.com", "Integrate", "yes", "TW74DJ", "15-Oct-2019"}
+	payload := LeadData{Attributes{"", "kolli", "akolli@xyz.com", "Integrate", "yes", "TW74DJ", "15-Oct-2019"}}
 	tests := []struct {
 		name string
 		args LeadData
@@ -176,7 +176,7 @@ func Test_4(t *testing.T) {
 
 	time.Sleep(1 * time.Second)
 
-	data := LeadData{"anand", "kolli", "akolli@xyz.com", "Integrate", "yes", "TW74DJ", "15-Oct-2019"}
+	data := LeadData{Attributes{"anand", "kolli", "akolli@xyz.com", "Integrate", "yes", "TW74DJ", "15-Oct-2019"}}
 	payload := []LeadData{data}
 	tests := []struct {
 		name string
@@ -202,7 +202,7 @@ func Test_5(t *testing.T) {
 
 	time.Sleep(1 * time.Second)
 
-	data := LeadData{"anand", "kolli", "akolli@xyz.com", "Integrate", "yes", "TW74DJ", "15-Oct-2019"}
+	data := LeadData{Attributes{"anand", "kolli", "akolli@xyz.com", "Integrate", "yes", "TW74DJ", "15-Oct-2019"}}
 	payload := []LeadData{data}
 	tests := []struct {
 		name string
@@ -228,7 +228,7 @@ func Test_6(t *testing.T) {
 
 	time.Sleep(1 * time.Second)
 
-	data := LeadData{"anand", "kolli", "akolli@xyz.com", "Integrate", "yes", "TW74DJ", "15-Oct-2019"}
+	data := LeadData{Attributes{"anand", "kolli", "akolli@xyz.com", "Integrate", "yes", "TW74DJ", "15-Oct-2019"}}
 	payload := []LeadData{data}
 	tests := []struct {
 		name string
