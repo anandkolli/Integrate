@@ -1,5 +1,4 @@
-// Package datastore package is an abstraction for the storing data either to persistent storage
-// or in memory
+// Package datastore is an abstraction for the storage of event data either to persistent storage or in memory
 package datastore
 
 import (
@@ -51,6 +50,8 @@ func (ds *storeInMem) Fetch(size int) []interface{} {
 	if size == 0 {
 		return nil
 	}
+	// if requested size is greater than available length of slice
+	// set len to slice length else to requested size
 	if size > len(ds.inmem) {
 		data = make([]interface{}, len(ds.inmem))
 	} else {

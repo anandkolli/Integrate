@@ -1,4 +1,4 @@
-// Package rest package exposing integration rest endpoint to send and collect from the server
+// Package rest exposes integration servers rest endpoint to send and collect data events to and from the server
 package rest
 
 import (
