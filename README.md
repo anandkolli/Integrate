@@ -1,5 +1,9 @@
-# Integrate
-Integrate assesment
+# Integrate Assesment
+
+## Pre requisite
+- Install "github.com/gorilla/mux"
+- Tested with go version go1.13.1 linux/amd64
+- Ubunut 16.04
 
 ## Implementation details
 1) Integrate server is running on localhost:9090
